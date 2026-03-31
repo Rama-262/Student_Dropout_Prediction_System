@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropout Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h1>🎓 Student Dropout Prediction</h1>
+
+<div class="form-container">
+    <div class="tooltip">
+        <input id="attendance" placeholder="Attendance %">
+        <span class="tooltiptext">Enter attendance (0–100)</span>
+    </div>
+
+    <div class="tooltip">
+        <input id="marks" placeholder="Marks %">
+        <span class="tooltiptext">Enter current marks (0–100)</span>
+    </div>
+
+    <div class="tooltip">
+        <input id="assignments" placeholder="Assignments %">
+        <span class="tooltiptext">Assignment completion %</span>
+    </div>
+
+    <div class="tooltip">
+        <input id="library" placeholder="Library Usage">
+        <span class="tooltiptext">Visits per month (0–25)</span>
+    </div>
+
+    <div class="tooltip">
+        <input id="prev_marks" placeholder="Previous Marks %">
+        <span class="tooltiptext">Last semester marks</span>
+    </div>
+
+    <div class="tooltip">
+        <input id="trend" placeholder="Attendance Trend">
+        <span class="tooltiptext">-10 = decreasing, +10 = improving</span>
+    </div>
+
+    <div class="tooltip">
+        <select id="aid">
+            <option value="0">No Financial Aid</option>
+            <option value="1">Financial Aid</option>
+        </select>
+        <span class="tooltiptext">Select if student has financial aid</span>
+    </div>
+
+    <button onclick="predict()">Predict</button>
+</div>
+
+<h3>🔍 Search Student</h3>
+
+<input id="search_id" class="small-input" placeholder="Student ID">
+<button onclick="searchStudent()">Search</button>
+
+<!-- 👇 DEFAULT BUTTON POSITION -->
+<div id="dashboard-btn-container">
+    <a href="/dashboard">Go to Dashboard →</a>
+</div>
+
+<div id="student_result"></div>
+<br><br>
+<div class="chart-container">
+    <canvas id="chart"></canvas>
+</div>
+
+<!-- 👇 BUTTON WILL MOVE HERE -->
+<div id="dashboard-bottom"></div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+body {
+    font-family: Arial;
+    text-align: center;
+}
+
+.form-container input, select {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 250px;
+}
+
+button {
+    padding: 10px;
+}
+
+.small-input {
+    width: 150px;
+    padding: 8px;
+}
+
+#chart {
+    width: 350px !important;
+    height: 350px !important;
+    margin: 40px auto;
+    display: block;
+}
+.chart-container {
+    width: 400px;
+    margin: 30px auto;
+}
+.tooltip {
+    position: relative;
+    display: block;
+    margin: 10px auto;
+    width: 250px;
+}
+
+.tooltip input,
+.tooltip select {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Tooltip box */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 6px;
+    border-radius: 6px;
+
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 12px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+/* Arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Show on hover */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
